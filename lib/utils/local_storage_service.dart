@@ -13,9 +13,9 @@ class AppPreference {
     await prefs.setBool(key, value);
   }
 
-  static Future<bool?> getBool(String key) async {
+  static Future<bool> getBool(String key) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(key);
+    return prefs.getBool(key) ?? false;
   }
 
   static Future<void> setString(String key, String value) async {
@@ -38,7 +38,12 @@ class AppPreference {
   static Future<String?> getUserToken() async {
     return getString(LocalStorageKeys.token);
   }
-
+  static Future<void> setLogin() async {
+    return setBool(LocalStorageKeys.keyLoggedIn, true);
+  }
+  static Future<bool> getLogin() async {
+    return getBool(LocalStorageKeys.keyLoggedIn);
+  }
 //:::::::::::::::::::::::::::::::::::::::  SET USER TOKEN  :::::::::::::::::::::::::::::::::::::::::::*/
 
   static Future<void> setUserToken(String token) async {

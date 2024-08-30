@@ -10,13 +10,15 @@ class Toaster {
 
   static Future showError({
     required String message,
-    required BuildContext context,
     FlushbarPosition position = FlushbarPosition.TOP,
   }) async {
+    var context  = Get.context! ;
     await Flushbar(
       borderWidth: 1,
       messageText: Text(message,
-          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 16.sp)),
+          style: Get.textTheme.bodyLarge!.copyWith(
+              color: AppColors.black,
+              fontSize: 16.sp)),
       flushbarPosition: position,
       borderColor: AppColors.red,
       messageColor: AppColors.black,
@@ -42,13 +44,17 @@ class Toaster {
 
   static Future showSuccess({
     required String message,
-    required BuildContext context,
+
     FlushbarPosition position = FlushbarPosition.TOP,
   }) async {
+    var context  = Get.context! ;
+
     await Flushbar(
       borderWidth: 1,
       messageText: Text(message,
-          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 16.sp)),
+          style: Get.textTheme.bodyLarge!.copyWith(
+              color: AppColors.black,
+              fontSize: 16.sp)),
       flushbarPosition: position,
       borderColor: Colors.green,
       messageColor: AppColors.black,
@@ -73,12 +79,16 @@ class Toaster {
 
   static Future showInfo({
     required String message,
-    required BuildContext context,
+
     FlushbarPosition position = FlushbarPosition.TOP,
   }) async {
+    var context  = Get.context! ;
+
     await Flushbar(
       messageText: Text(message,
-          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 16.sp)),
+          style: Get.textTheme.bodyLarge!.copyWith(
+              color: AppColors.black,
+              fontSize: 16.sp)),
       borderWidth: 1,
       flushbarPosition: position,
       messageColor: AppColors.black,

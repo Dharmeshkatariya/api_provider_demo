@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:interview_practise/app/modules/splash/bindings/splash_binding.dart';
+import 'package:interview_practise/services/appwrite_service.dart';
 import 'package:interview_practise/utils/app_colors.dart';
-
+import 'package:interview_practise/utils/app_theme.dart';
 import 'api_providers/api_service.dart';
-import 'app/modules/login/bindings/login_binding.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Get.put(AppWriteServices(),permanent: true) ;
   await ScreenUtil.ensureScreenSize();
-  await GetStorage.init();
   API();
   await _setPreferredOrientations();
   runApp(const MyApp());
@@ -70,31 +70,26 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           child: GetMaterialApp(
             getPages: AppPages.routes,
             initialRoute: AppPages.INITIAL,
-            // home: TwoDimensionalScrollWidget(
-            //   child: Container(
-            //     color: Colors.white,
-            //       padding: EdgeInsets.symmetric(horizontal: 50, vertical: 50.h),
-            //       child: Text("Data")),
-            // ),
             locale: locale,
             transitionDuration: Durations.short4,
             defaultTransition: Transition.downToUp,
-            theme: ThemeData(
-                useMaterial3: true,
-                scaffoldBackgroundColor: AppColors.white,
-                textTheme: GoogleFonts.poppinsTextTheme(),
-                appBarTheme: const AppBarTheme(
-                  elevation: 0,
-                  centerTitle: true,
-                  scrolledUnderElevation: 0,
-                  shadowColor: Colors.transparent,
-                  backgroundColor: AppColors.white,
-                ),
-                elevatedButtonTheme: elevatedBtnTheme,
-                colorScheme:
-                    ColorScheme.fromSeed(seedColor: AppColors.primary)),
+            // theme: ThemeData(
+            //     useMaterial3: true,
+            //     scaffoldBackgroundColor: AppColors.white,
+            //     textTheme: GoogleFonts.poppinsTextTheme(),
+            //     appBarTheme: const AppBarTheme(
+            //       elevation: 0,
+            //       centerTitle: true,
+            //       scrolledUnderElevation: 0,
+            //       shadowColor: Colors.transparent,
+            //       backgroundColor: AppColors.white,
+            //     ),
+            //     elevatedButtonTheme: elevatedBtnTheme,
+            //     colorScheme:
+            //         ColorScheme.fromSeed(seedColor: AppColors.primary)),
+            theme: AppTheme.darkTheme,
             debugShowCheckedModeBanner: false,
-            initialBinding: LoginBinding(),
+            initialBinding: SplashBinding(),
             scrollBehavior: WebDragScrollBehavior(),
           ),
         );

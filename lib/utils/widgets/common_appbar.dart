@@ -1,18 +1,22 @@
 import 'dart:io';
-import 'dart:ui';
 
-import 'package:interview_practise/models/customer_model.dart';
-import 'package:interview_practise/utils/utility.dart';
+import '../../models/customer_model.dart';
+import '../../models/review.dart';
+import '../export.dart';
 
-import '../models/review.dart';
-import 'app_colors.dart';
-import 'export.dart';
+class CommonWidget {
 
-class ApiConstant {
-  static String baseUrl = "";
-}
+  static AppBar appBar() {
+    return AppBar(
+      title: SvgPicture.asset(
+        twitterLogo,
+        color: AppColors.blueColor,
+        height: 30,
+      ),
+      centerTitle: true,
+    );
+  }
 
-class Common {
 
 
   static List<CustomerModel> getCustomerData(){
@@ -109,20 +113,20 @@ class Common {
       "katariyadharmesh658@gmail.com",
       "katariyadharmesh658@gmail.com",
       "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
-    "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
+      "katariyadharmesh658@gmail.com",
       "katariyadharmesh658@gmail.com",
       "katariyadharmesh658@gmail.com",
       "katariyadharmesh658@gmail.com",
@@ -154,10 +158,10 @@ class Common {
 
     ];
     for (int i = 0; i < name.length; i++) {
-       CustomerModel customerModel = CustomerModel();
-       customerModel.customerName = name[i];
-       customerModel.location = locations[i];
-       customerModel.email = emails[i];
+      CustomerModel customerModel = CustomerModel();
+      customerModel.customerName = name[i];
+      customerModel.location = locations[i];
+      customerModel.email = emails[i];
 
       cList.add(customerModel);
     }
@@ -274,7 +278,7 @@ class Common {
       padding: const EdgeInsets.all(1),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: Divider(
               thickness: 1,
               color: AppColors.black,
@@ -282,7 +286,7 @@ class Common {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 2.w),
-            child: Text(
+            child: const Text(
               "  OR  ",
               style: TextStyle(
                 color: AppColors.black,
@@ -290,7 +294,7 @@ class Common {
               ),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Divider(
               thickness: 1,
               color: AppColors.black,
@@ -313,7 +317,7 @@ class Common {
         child: GestureDetector(
           onTap: ontap,
           child: CircleAvatar(
-              // backgroundColor: AppColors.navyBlue.withOpacity(0.1),
+            // backgroundColor: AppColors.navyBlue.withOpacity(0.1),
               backgroundColor: AppColors.white,
               radius: 15.r,
               child: createWidget),

@@ -3,22 +3,13 @@ import 'package:file_picker/file_picker.dart';
 import 'app_colors.dart';
 import 'asset.dart';
 import 'common_btn.dart';
-import 'env.dart';
 import 'export.dart';
 import 'dart:io';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:get/get.dart';
-import 'package:jiffy/jiffy.dart';
 import 'package:uuid/uuid.dart';
 
 class Utility {
-  static void showSnackbar(String msg) {
-    var context = Get.context!;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(msg),
-        backgroundColor: AppColors.white,
-        behavior: SnackBarBehavior.floating));
-  }
 
   static Widget imageLoader() {
     return const Center(
@@ -103,24 +94,35 @@ class Utility {
     );
   }
 
-  static Future<void> startLoading() async {
-    var context  = Get.context ! ;
-    return await showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return SimpleDialog(
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          children: [loader()],
-        );
-      },
-    );
+  static bool isKeyboardShowing() {
+    return WidgetsBinding.instance.window.viewInsets.bottom > 0;
   }
 
-  static Future<void> stopLoading(BuildContext context) async {
-    Navigator.of(context).pop();
+  static closeKeyboard(BuildContext context) {
+    FocusScopeNode currentFocus = FocusScope.of(context);
+    if (!currentFocus.hasPrimaryFocus) {
+      currentFocus.unfocus();
+    }
   }
+
+  // static Future<void> startLoading() async {
+  //   var context  = Get.context ! ;
+  //   return await showDialog<void>(
+  //     context: context,
+  //     barrierDismissible: false,
+  //     builder: (BuildContext context) {
+  //       return SimpleDialog(
+  //         elevation: 0.0,
+  //         backgroundColor: Colors.transparent,
+  //         children: [loader()],
+  //       );
+  //     },
+  //   );
+  // }
+  //
+  // static Future<void> stopLoading(BuildContext context) async {
+  //   Navigator.of(context).pop();
+  // }
 
   static Widget animationLoader() {
     return Lottie.asset(

@@ -1,11 +1,5 @@
-
 import 'dart:io';
-
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-
 import '../utils/export.dart';
-import '../utils/widgets/toaster.dart';
 
 class MediaPickerService {
   static Future<KPickedFile?> pickImageFromGallery(BuildContext context) async {
@@ -21,7 +15,7 @@ class MediaPickerService {
         );
       }
     }).onError((error, stackTrace) async {
-      await Toaster.showInfo(context: context, message: error.toString());
+      await Toaster.showInfo(message: error.toString());
       return null;
     });
   }
@@ -39,7 +33,7 @@ class MediaPickerService {
         );
       }
     }).onError((error, stackTrace) async {
-      await Toaster.showInfo(context: context, message: error.toString());
+      await Toaster.showInfo(message: error.toString());
       return null;
     });
   }
@@ -63,4 +57,3 @@ class KPickedFile {
     required this.fileSize,
   });
 }
-

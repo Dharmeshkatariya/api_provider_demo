@@ -6,12 +6,7 @@ const cabinSemiBold = "Cabin-semibold";
 const cabinBold = "Cabin-bold";
 const cabinCondensed = "CabinCondensed";
 
-const meriendaBlack = "Merienda-black";
-const meriendabold = "Merienda-bold";
-const meriendalight = "Merienda-light";
-const meriendamedium = "Merienda-medium";
-const meriendaRegular = "Merienda-regular";
-const meriendaSemiBold = "Merienda-semibold";
+
 
 const imageFilePath = "assets/images/";
 const iconFilePath = "assets/icons/";
@@ -33,6 +28,23 @@ const bg3 = "${imageFilePath}bg_3.jpg";
 
 
 
+
+
+ const String twitterLogo = "${iconFilePath}twitter_logo.svg";
+ const String homeFilledIcon = '${iconFilePath}home_filled.svg';
+ const String homeOutlinedIcon = '${iconFilePath}home_outlined.svg';
+ const String notifFilledIcon = '${iconFilePath}notif_filled.svg';
+ const String notifOutlinedIcon = '${iconFilePath}notif_outlined.svg';
+ const String searchIcon = '${iconFilePath}search.svg';
+ const String gifIcon = '${iconFilePath}gif.svg';
+ const String emojiIcon = '${iconFilePath}emoji.svg';
+ const String galleryIcon = '${iconFilePath}gallery.svg';
+ const String commentIcon = '${iconFilePath}comment.svg';
+ const String retweetIcon = '${iconFilePath}retweet.svg';
+ const String likeOutlinedIcon = '${iconFilePath}like_outlined.svg';
+ const String likeFilledIcon = '${iconFilePath}like_filled.svg';
+ const String viewsIcon = '${iconFilePath}views.svg';
+ const String verifiedIcon = '${iconFilePath}verified.svg';
  const String languageIcon = "assets/images/language.svg";
  const String icAuthFacebook = "assets/icons/ic_auth_facebook.svg";
  const String icAuthGoogle = "assets/icons/ic_auth_google.svg";
@@ -90,11 +102,9 @@ const bg3 = "${imageFilePath}bg_3.jpg";
 
 /*images*/
  const String icWelcomeMain = "assets/images/welcome_main.svg";
- const String user = "assets/images/user.png";
  const String person = "assets/images/person.png";
  const String language = "assets/images/language.svg";
  const String noTask = "assets/images/no_task.svg";
  const String conCorner = "assets/images/con_corner.svg";
  const String organization = "assets/images/organization.png";
  const String communityDummy = "assets/images/ic_community_dummy.png";
- const String agoraAppId = "";

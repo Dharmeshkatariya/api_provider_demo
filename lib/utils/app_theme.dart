@@ -4,17 +4,18 @@ import 'export.dart';
 class AppTheme {
   static final ThemeData darkTheme = ThemeData(
     // brightness: Brightness.dark,
+    useMaterial3: true,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.backgroundColor,
       elevation: 0.0,
-      surfaceTintColor: Colors.black,
+      surfaceTintColor:AppColors.backgroundColor,
     ),
     navigationBarTheme: const NavigationBarThemeData(
       height: 55,
       indicatorColor: Colors.transparent,
       elevation: 5.0,
       labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.backgroundColor,
       iconTheme: MaterialStatePropertyAll<IconThemeData>(
         IconThemeData(
           color: Colors.white,
